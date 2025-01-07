@@ -53,8 +53,8 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col items-center">
-              <div className="flex flex-row gap-2 items-center mt-3">
-                <div className="relative w-[20px] h-[20px]">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+                <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/x-logo.svg"
                     alt="Facebook Logo"
@@ -65,14 +65,14 @@ export default function Footer() {
                 <Link
                   href="https://x.com"
                   target="blank"
-                  className="text-sm font-medium"
+                  className="text-sm font-medium "
                 >
                   Us
                 </Link>
               </div>
 
-              <div className="flex flex-row gap-2 items-center mt-3">
-                <div className="relative w-[20px] h-[20px]">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+                <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/instagram-logo.svg"
                     alt="Instagram Logo"
@@ -83,14 +83,14 @@ export default function Footer() {
                 <Link
                   href="https://instagram.com"
                   target="blank"
-                  className="text-sm font-medium"
+                  className="text-sm font-medium "
                 >
                   Us
                 </Link>
               </div>
 
-              <div className="flex flex-row gap-2 items-center mt-3">
-                <div className="relative w-[20px] h-[20px]">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+                <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/mail-logo.svg"
                     alt="Email Logo"
@@ -100,7 +100,7 @@ export default function Footer() {
                 </div>
                 <a
                   href="mailto:Us@mail.com"
-                  className="text-sm font-medium"
+                  className="text-sm font-medium "
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -15,9 +15,9 @@ export default async function CompanyServices() {
           {services?.map((item) => (
             <ul key={item.slug as string} className="list-disc pl-5 mt-2">
               <li className="mt-2">
-                <h4 className="text-base md:text-lg font-semibold">
+                <span className="text-base md:text-lg font-semibold">
                   {item.title as string}
-                </h4>
+                </span>
                 <p className="text-sm md:text-base font-normal mt-1">
                   {item.description as string}
                 </p>

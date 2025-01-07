@@ -39,9 +39,9 @@ export default async function CompanyOverview() {
               className="list-disc pl-5 mt-2 w-full"
             >
               <li className="mt-2">
-                <h4 className="text-base md:text-sm font-semibold">
+                <span className="text-base md:text-sm font-semibold">
                   {item.title as string}
-                </h4>
+                </span>
                 <p className="text-sm md:text-xs font-normal mt-1">
                   {item.description as string}
                 </p>
