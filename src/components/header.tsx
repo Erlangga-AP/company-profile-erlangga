@@ -51,12 +51,6 @@ export default function Header() {
             <span className="absolute bottom-0 h-[2px] "></span>
           </Link>
         </li>
-        <li className="group">
-          <Link href="">
-            Contact us
-            <span className="absolute bottom-0 h-[2px] "></span>
-          </Link>
-        </li>
       </ul>
     </nav>
   );

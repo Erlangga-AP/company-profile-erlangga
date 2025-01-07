@@ -1,5 +1,29 @@
 import * as contentful from "contentful";
 
+interface ContentfulImage {
+  fields: { file: { url: string } };
+}
+
+interface Item {
+  fields: {
+    clientLogo: ContentfulImage;
+    image: ContentfulImage;
+    teamPhoto: ContentfulImage;
+    clientPhoto: ContentfulImage;
+    slug: string;
+    name: string;
+    job: string;
+    feedback: string;
+    title: string;
+    expertise: string;
+    description: string;
+    clientName: string;
+    clientJob: string;
+    clientFeedback: string;
+    contact: string;
+  };
+}
+
 const client = contentful.createClient({
   space: "q6rx6pxhzrxs",
   environment: "master", // defaults to 'master' if not set
@@ -32,7 +56,19 @@ export async function getAllCompanyOverview() {
 
 export async function getAllCompanyServices() {
   try {
-    const data = await client.getEntries({ content_type: "companyServices" });
+    const data = (await client.getEntries({
+      content_type: "companyServices",
+    })) as unknown as {
+      items: {
+        fields: {
+          description: string;
+          title: string;
+          slug: string;
+          image: { fields: { file: { url: string } } };
+        };
+      }[];
+    };
+
     return data.items.map((item) => {
       const imageUrl = item?.fields?.image?.fields?.file.url;
       return {
@@ -49,9 +85,17 @@ export async function getAllCompanyServices() {
 
 export async function getAllCompanyCustomer() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyCustomers",
-    });
+    })) as unknown as {
+      items: {
+        fields: {
+          slug: string;
+          clientLogo: { fields: { file: { url: string } } };
+        };
+      }[];
+    };
+
     return data.items.map((item) => {
       const clientUrl = item?.fields?.clientLogo?.fields?.file.url;
       return {
@@ -66,9 +110,10 @@ export async function getAllCompanyCustomer() {
 
 export async function getAllTestimonial() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTestimonials",
-    });
+    })) as unknown as { items: Item[] };
+
     return data.items.map((item) => {
       const clientPhotoUrl = item?.fields?.clientPhoto?.fields?.file.url;
       return {
@@ -86,9 +131,9 @@ export async function getAllTestimonial() {
 
 export async function getTeamFrontEnd() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamFrontEnd",
-    });
+    })) as unknown as { items: Item[] };
     return data.items.map((item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
@@ -96,6 +141,8 @@ export async function getTeamFrontEnd() {
         slug: item.fields.slug,
         title: item.fields.title,
         description: item.fields.description,
+        expertise: item.fields.expertise,
+        contact: item.fields.contact,
         teamPhoto: `https:${teamPhotoUrl}`,
       };
     });
@@ -106,9 +153,9 @@ export async function getTeamFrontEnd() {
 
 export async function getTeamBackEnd() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamBackEnd",
-    });
+    })) as unknown as { items: Item[] };
     return data.items.map((item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
@@ -116,6 +163,8 @@ export async function getTeamBackEnd() {
         slug: item.fields.slug,
         title: item.fields.title,
         description: item.fields.description,
+        expertise: item.fields.expertise,
+        contact: item.fields.contact,
         teamPhoto: `https:${teamPhotoUrl}`,
       };
     });
@@ -126,9 +175,9 @@ export async function getTeamBackEnd() {
 
 export async function getTeamUiUx() {
   try {
-    const data = await client.getEntries({
+    const data = (await client.getEntries({
       content_type: "companyTeamUiux",
-    });
+    })) as unknown as { items: Item[] };
     return data.items.map((item) => {
       const teamPhotoUrl = item?.fields?.teamPhoto?.fields?.file.url;
       return {
@@ -136,6 +185,8 @@ export async function getTeamUiUx() {
         slug: item.fields.slug,
         title: item.fields.title,
         description: item.fields.description,
+        expertise: item.fields.expertise,
+        contact: item.fields.contact,
         teamPhoto: `https:${teamPhotoUrl}`,
       };
     });
