@@ -28,7 +28,7 @@ export default function Footer() {
             <h3 className="text-[#414141] font-semibold text-2xl mb-4">
               Company
             </h3>
-            <ul className="mt-4 list-disc text-sm font-medium text-[#414141]">
+            <ul className="mt-4 list-disc text-lg font-medium text-[#414141]">
               <li>
                 <Link href="/about" className="hover:underline">
                   About Us
@@ -53,7 +53,7 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col items-center">
-              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center text-lg">
                 <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/x-logo.svg"
@@ -65,13 +65,13 @@ export default function Footer() {
                 <Link
                   href="https://x.com"
                   target="blank"
-                  className="text-sm font-medium "
+                  className="text-sm font-medium hover:underline"
                 >
                   Us
                 </Link>
               </div>
 
-              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center text-lg">
                 <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/instagram-logo.svg"
@@ -83,13 +83,13 @@ export default function Footer() {
                 <Link
                   href="https://instagram.com"
                   target="blank"
-                  className="text-sm font-medium "
+                  className="text-sm font-medium hover:underline"
                 >
                   Us
                 </Link>
               </div>
 
-              <div className="flex flex-row gap-2 items-center mt-6 justify-center">
+              <div className="flex flex-row gap-2 items-center mt-6 justify-center text-lg">
                 <div className="relative w-[20px] h-[20px] p-3">
                   <Image
                     src="/mail-logo.svg"
@@ -100,7 +100,7 @@ export default function Footer() {
                 </div>
                 <a
                   href="mailto:Us@mail.com"
-                  className="text-sm font-medium "
+                  className="text-sm font-medium hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
